@@ -13,7 +13,12 @@ void loadHtml(string filename_);
 int inputVal();
 void driveControl(int direction_, int motorspeed_);
 
-#define motorSpeed 500
+#define motorSpeed 450
+#define backwardRight 0
+#define pwmPin 1
+#define forwardRight 2
+#define backwardLeft 3
+#define forwardLeft 4
 
 int main(int argc, char **argv, char **envp){
     loadHtml("control-page.html");
@@ -36,31 +41,31 @@ void driveControl(int direction_, int motorspeed_){
     switch(direction_){
         case 1:
         driveControl(0, 0);
-        pwmWrite(1, motorspeed_);
-        digitalWrite(0, 1);
-        digitalWrite(4, 1);
+        pwmWrite(pwmPin, motorspeed_+100);
+        digitalWrite(backwardLeft, 1);
+        digitalWrite(forwardRight, 1);
         printf("<a style=\"font-family:Helvetica;\">LEFT</a>");
         break;
         case 2:
         driveControl(0, 0);
-        pwmWrite(1, motorspeed_);
-        digitalWrite(2, 1);
-        digitalWrite(3, 1);
+        pwmWrite(pwmPin, motorspeed_+100);
+        digitalWrite(forwardLeft, 1);
+        digitalWrite(backwardRight, 1);
         printf("<a style=\"font-family:Helvetica;\">RIGHT</a>");
         break;
         case 3:
         driveControl(0, 0);
-        pwmWrite(1, motorspeed_);
-        digitalWrite(0, 1);
-        digitalWrite(3, 1);
-        printf("<a style=\"font-family:Helvetica;\">RIGHT</a>");
+        pwmWrite(pwmPin, motorspeed_);
+        digitalWrite(forwardLeft, 1);
+        digitalWrite(forwardRight, 1);
+        printf("<a style=\"font-family:Helvetica;\">FORWARD</a>");
         break;
         case 4:
         driveControl(0, 0);
-        pwmWrite(1, motorspeed_);
-        digitalWrite(2, 1);
-        digitalWrite(4, 1);
-        printf("<a style=\"font-family:Helvetica;\">RIGHT</a>");
+        pwmWrite(pwmPin, motorspeed_);
+        digitalWrite(backwardLeft, 1);
+        digitalWrite(backwardRight, 1);
+        printf("<a style=\"font-family:Helvetica;\">BACKWARD</a>");
         break;
         default:
         digitalWrite(0, 0);
