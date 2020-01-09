@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 15px;
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 17px;
+        font-weight: 700;
+        cursor: pointer;
+        width: 80px;
+      }
+
+      button:hover {
+        background-color: rgb(2, 151, 2);
+      }
+      .s_button {
+        background-color: #d83333;
+        border: none;
+        color: white;
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 17px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .u_button {
+        margin-left: 83px;
+      }
+      .d_button {
+        margin-left: 83px;
+      }
+
+      .s_button:hover {
+        background-color: #a71313;
+      }
+      .title {
+        font-size: 17px;
+        font-weight: 555;
+        font-family: Helvetica;
+        padding-left: 20px;
+      }
+
+      @media (max-width: 1000px) {
+        button {
+          width: 29%;
+          height: 250px;
+          font-size: 72px;
+        }
+        .s_button {
+          width: 29%;
+          height: 250px;
+          font-size: 72px;
+        }
+        .u_button {
+          margin-left: 29%;
+        }
+        .d_button {
+          margin-left: 29%;
+        }
+        .title {
+          font-size: 72px;
+          font-weight: 555;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="pi-controller" method="GET">
+      <p class="title">
+        rasPiCar control
+      </p>
+      <p>
+        <button type="submit" value="3" name="value" class="u_button">
+          FWD
+        </button>
+      </p>
+      <p>
+        <button type="submit" value="1" name="value" class="l_button">
+          LEFT
+        </button>
+        <button type="submit" value="0" name="value" class="s_button">
+          STOP
+        </button>
+        <button type="submit" value="2" name="value" class="r_button">
+          RIGHT
+        </button>
+      </p>
+      <p>
+        <button type="submit" value="4" name="value" class="d_button">
+          BWD
+        </button>
+      </p>
+    </form>
+  </body>
+</html>
