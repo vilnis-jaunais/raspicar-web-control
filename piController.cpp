@@ -102,8 +102,7 @@ int inputVal(){
     char *queryPtr = getenv("QUERY_STRING");
     char query[255];
     snprintf(query, 255, "%s", queryPtr);
-    char queryChr = query[6];
-    int a = queryChr-'0';
+    int a = query[6]-'0';
     return a;
 }
 
